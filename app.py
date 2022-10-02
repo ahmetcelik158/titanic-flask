@@ -1,19 +1,23 @@
+from flask import Flask, request
 from model import Predictor
+import json
 
-my_dict = {"Pclass": 2,
-            "Title": "Mrs",
-            "Name": "Hello",
-            "Surname": "World",
-            "Sex": "female",
-            "Age": 32,
-            "SibSp": 2,
-            "Parch": 0,
-            "Fare": 220,
-            "Embarked": "C"}
+app = Flask(__name__)
+
+@app.route("/", methods=["POST"])
+def index():
+    # get input data
+    request_json = request.get_json()
+    request_dict = json.loads(request_json)
+
+    # prediction
+    p = Predictor()
+    p.load_dict(request_dict)
+    survival, probability = p.predict()
+    response = json.dumps({"survival": survival, "probability": probability})
+
+    return response, 200
 
 if __name__ == "__main__":
-    p = Predictor()
-    p.load_dict(my_dict)
-    probs, survival = p.predict()
-    print(probs, survival)
+    app.run()
     

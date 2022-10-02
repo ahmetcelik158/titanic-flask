@@ -60,6 +60,7 @@ class Predictor:
 
     def predict(self):
         df_scaled = self.scaler.transform(self.df)
-        self.prob = self.model.predict_proba(df_scaled)
-        self.survival = self.model.predict(df_scaled)
-        return self.prob, self.survival
+        survival = self.model.predict(df_scaled)
+        probs = self.model.predict_proba(df_scaled)
+        return int(survival[0]), float(probs[0][1])
+
