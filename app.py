@@ -1,4 +1,5 @@
 from flask import Flask, request
+from waitress import serve
 from model import Predictor
 import json
 
@@ -19,5 +20,5 @@ def index():
     return response, 200
 
 if __name__ == "__main__":
-    app.run()
+    serve(app, host="127.0.0.1", port=8080)
     
