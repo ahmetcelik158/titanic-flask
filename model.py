@@ -35,6 +35,11 @@ class Predictor:
             data_dict["TitleProcessed_ Mrs"] = 1
 
         # Fare:
+        data_dict["Fare"] = 85 # 1st class
+        if data_dict["Pclass"] == 2: # 2nd class
+            data_dict["Fare"] = 42
+        elif data_dict["Pclass"] == 3: # 3rd class
+            data_dict["Fare"] = 9
         data_dict["FareLog"] = log(data_dict["Fare"]+14.4542)
 
         # Sex:
