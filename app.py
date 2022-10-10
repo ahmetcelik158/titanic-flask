@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 from waitress import serve
 from model import Predictor
-import json
 
 app = Flask(__name__)
 
@@ -16,13 +15,11 @@ def index():
         for key in num_keys:
             form_dict[key] = int(form_dict[key])
 
-        #prediction
+        # prediction
         p = Predictor()
         p.load_dict(form_dict)
-        survival, probability = p.predict()
-
-        response = json.dumps({"survival": survival, "probability": probability})
-        return response, 200
+        _, prob = p.predict()
+        return render_template("survival.html", probability=prob)
 
 if __name__ == "__main__":
     serve(app, host="127.0.0.1", port=8080)

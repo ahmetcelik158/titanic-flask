@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{url_for('static', filename='main.css')}}">
+    <title>Titanic</title>
+</head>
+
+<body>
+<header>
+    <div class="header">
+        {% if probability < 0.5 %}
+        <h1>Oh no...</h1>
+        {% else %}
+        <h1>You survived!</h1>
+        {% endif %}
+    </div>
+</header>
+
+<div class = "content">
+    {% if probability < 0.5 %}
+    <img src="{{url_for('static', filename='images/survive_0.png')}}" alt="oh no..." class="centered-img"/>
+    {% else %}
+    <img src="{{url_for('static', filename='images/survive_1.png')}}" alt="survived" class="centered-img"/>
+    {% endif %}
+
+    <div id="result-text">
+        {% if probability > 0.75 %}
+        <p>You were able to get on the lifeboat!</p>
+        {% elif probability > 0.50 %}
+        <p>You managed to survive by staying on the floating door until help arrived.</p>
+        {% elif probability > 0.25 %}
+        <p>You were behind a few people when the last lifeboat was gone.</p>
+        {% else %}
+        <p>The ship had sunk and you were in the cold water with hundreds of people.</p>
+        {% endif %}
+        <p>(you had {{'%0.1f'| format(100*probability)}}% chance of survival)</p>
+    </div>
+</div>
+
+<footer>
+    <a class="reference" href="https://github.com/ahmetcelik158/titanic-flask" target="_blank">Github</a>
+    <a class="reference" href="https://www.kaggle.com/code/ahmetcelik158/titanic" target="_blank">Kaggle</a>
+</footer>
+
+</body>
+</html>

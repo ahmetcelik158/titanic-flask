@@ -3,6 +3,7 @@
 * Created a Web UI using Flask to predict the survival chance of a person from Titanic.
 * The machine learning model that predicts survival is taken from my own Kaggle project which has an accuracy of 79%.
 * In this project, application takes the necessary information from the client and returns the survival chance.
+* For REST API, please check branch "flask-api"
 * ML Model Reference: https://www.kaggle.com/code/ahmetcelik158/titanic
 
 ## Packages:
@@ -11,7 +12,7 @@
 
 **Installing Requirements:** ```pip install -r requirements.txt```
 
-## Input Data Format
+## Input Data:
 * Title: [string] "Miss", "Mr", "Mrs", "Master" or "Other"
 * First Name: [string]
 * Last Name: [string]

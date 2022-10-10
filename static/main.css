@@ -19,7 +19,7 @@ h1 {
     line-height: 1em;
 }
 
-.form-header {
+.header {
     background-color: rgba(78, 164, 217, 0.8);
     border-radius: 22px;
     margin: 2em auto;
@@ -27,7 +27,7 @@ h1 {
     width: 90%;
 }
 
-.form-content {
+.content {
     background-color: rgba(160, 219, 242, 0.5);
     border-radius: 22px;
     margin: auto;
@@ -74,6 +74,20 @@ select{
 
 #SibSp, #Parch{
 	margin: 1em 0.5em 0 0;
+}
+
+.centered-img {
+    display: block;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+#result-text{
+    text-align: center;
+    padding: 12px 0 0;
 }
 
 footer {
