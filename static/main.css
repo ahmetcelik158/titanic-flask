@@ -1,0 +1,135 @@
+body {
+    font-family: "Brush Script MT", cursive;
+    color: #E4F2F1;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://wallpapercave.com/wp/s6XsOfz.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.8em;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1em;
+}
+
+.header {
+    background-color: rgba(78, 164, 217, 0.8);
+    border-radius: 22px;
+    margin: 2em auto;
+    padding: 1em;
+    width: 90%;
+}
+
+.content {
+    background-color: rgba(160, 219, 242, 0.5);
+    border-radius: 22px;
+    margin: auto;
+    padding: 1em;
+    width: 90%;
+}
+
+.labels {
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 40%;
+    margin: 12px 0 0 0;
+}
+
+.inputs {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    width: 50%;
+    margin: 12px 0 0 10px;
+}
+
+.submit-button {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    margin: 10px;
+}
+
+#submit {
+    font-size: 1em;
+    font-family: inherit;
+    padding: 5px 8px;
+}
+
+input {
+    font-family: inherit;
+}
+
+select{
+    font-family: inherit;
+}
+
+#SibSp, #Parch{
+	margin: 1em 0.5em 0 0;
+}
+
+.centered-img {
+    display: block;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+#result-text{
+    text-align: center;
+    padding: 12px 0 0;
+}
+
+footer {
+    text-align: center;
+    margin: 20px;
+}
+
+.reference {
+    margin: 10px;
+}
+
+footer a {
+    color: rgba(78, 164, 217, 1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: rgba(160, 219, 242, 1);
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .labels {
+        width: 100%;
+        text-align: left;
+    }
+
+    .inputs {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+
+    .submit-button {
+        margin: auto;
+    }
+
+    #SibSp, #Parch{
+        margin: 0 0 0 0;
+    }
+}
+  

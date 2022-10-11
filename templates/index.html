@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{url_for('static', filename='main.css')}}">
+    <title>Titanic</title>
+</head>
+
+<body>
+<header>
+    <div class="header">
+        <h1>Would you survive Titanic?</h1>
+    </div>
+</header>
+
+<div class="content">
+    <form action="/" method="POST">
+        <!--Title-->
+        <div class="labels"><label for="Title">Title:</label></div>
+        <div class="inputs"><select name="Title" id="Title" required>
+            <option selected style="display:none"></option>
+            <option value="Miss">Miss</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Master">Master</option>
+            <option value="Other">Other</option>
+        </select></div>
+        <!--Name-->
+        <div class="labels"><label for="Name">First Name:</label></div>
+        <div class="inputs"><input type="text" name="Name" id="Name" required></div>
+        <!--Surname-->
+        <div class="labels"><label for="Surname">Last Name:</label></div>
+        <div class="inputs"><input type="text" name="Surname" id="Surname" required></div>
+        <!--Sex-->
+        <div class="labels"><label for="Sex">Sex:</label></div>
+        <div class="inputs"><select name="Sex" id="Sex" required>
+            <option selected style="display:none"></option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+        </select></div>
+        <!--Age-->
+        <div class="labels"><label for="Age">Age:</label></div>
+        <div class="inputs"><input type="number" name="Age" id="Age" min="0" max="120" required></div>
+        <!--SibSp-->
+        <div class="labels"><label for="SibSp">Number of siblings & spouses:<br>(aboard the Titanic)</label></div>
+        <div class="inputs"><input type="range" name="SibSp" id="SibSp" value="0" min="0" max="8" oninput="this.nextElementSibling.value=this.value">
+        <output></output></div>
+        <!--Parch-->
+        <div class="labels"><label for="Parch">Number of parents & children:<br>(aboard the Titanic)</label></div>
+        <div class="inputs"><input type="range" name="Parch" id="Parch" value="0" min="0" max="8" oninput="this.nextElementSibling.value=this.value">
+        <output></output></div>
+        <!--Embarked-->
+        <div class="labels"><label for="Embarked">Port of Embarkation:</label></div>
+        <div class="inputs"><select name="Embarked" id="Embarked" required>
+            <option selected style="display:none"></option>
+            <option value="C">Cherbourg</option>
+            <option value="Q">Queenstown</option>
+            <option value="S">Southampton</option>
+        </select></div>
+        <!--Pclass-->
+        <div class="labels"><label for="Pclass">Ticket Class:</label></div>
+        <div class="inputs"><select name="Pclass" id="Pclass" required>
+            <option selected style="display:none"></option>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+        </select></div>
+        <!--Submit-->
+        <div class="labels"></div>
+        <div class="submit-button"><input type="submit" id="submit" value="Sail"></div>
+    </form>
+</div>
+
+<footer>
+    <a class="reference" href="https://github.com/ahmetcelik158/titanic-flask" target="_blank">Github</a>
+    <a class="reference" href="https://www.kaggle.com/code/ahmetcelik158/titanic" target="_blank">Kaggle</a>
+</footer>
+
+</body>
+</html>
