@@ -11,7 +11,8 @@
 <body>
 <header>
     <div class="header">
-        {% if probability < 0.5 %}
+        {% set prob_perc = (probability*100)|round(1, 'floor') %}
+        {% if prob_perc < 50 %}
         <h1>Oh no...</h1>
         {% else %}
         <h1>You survived!</h1>
@@ -20,23 +21,23 @@
 </header>
 
 <div class = "content">
-    {% if probability < 0.5 %}
+    {% if prob_perc < 50 %}
     <img src="{{url_for('static', filename='images/survive_0.png')}}" alt="oh no..." class="centered-img"/>
     {% else %}
     <img src="{{url_for('static', filename='images/survive_1.png')}}" alt="survived" class="centered-img"/>
     {% endif %}
 
     <div id="result-text">
-        {% if probability > 0.75 %}
+        {% if prob_perc >= 75 %}
         <p>You were able to get on the lifeboat!</p>
-        {% elif probability > 0.50 %}
+        {% elif prob_perc >= 50 %}
         <p>You managed to survive by staying on the floating door until help arrived.</p>
-        {% elif probability > 0.25 %}
+        {% elif prob_perc >= 25 %}
         <p>You were behind a few people when the last lifeboat was gone.</p>
         {% else %}
         <p>The ship had sunk and you were in the cold water with hundreds of people.</p>
         {% endif %}
-        <p>(you had {{'%0.1f'| format(100*probability)}}% chance of survival)</p>
+        <p>(you had {{prob_perc}}% chance of survival)</p>
     </div>
 </div>
 
